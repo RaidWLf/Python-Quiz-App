@@ -199,7 +199,7 @@ def playGame():
 def signIn():
     username = input("Enter your username: ")
     password = input("Enter your password: ")
-    if username.type() != str or password.type() != str:
+    if type(username) != str or type(password) != str:
         print("Invalid input")
         signIn()
     if (username in users.keys() and users[username] == password):
@@ -214,6 +214,9 @@ def signIn():
 def signUp():
     username = input("Enter your username: ")
     password = input("Enter your password: ")
+    if type(username) != str or type(password) != str:
+        print("Invalid input")
+        signUp()
     users[username] = password
     print("You have successfully signed up")
     print("-"*40)
